@@ -9,40 +9,8 @@ class App extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch('/count')
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(json => {
-  //       this.setState(() => {
-  //         const counter = json.counter;
-  //         return { counter };
-  //       });
-  //     });
-  // }
-
-  kageBunshin() {
-    fetch('/count', {
-      method: 'POST'
-    })
-      .then(res => {
-        return res.json();
-      })
-      .then(json => {
-        this.setState(() => {
-          const counter = json.counter;
-          return { counter };
-        });
-      });
-  }
-
   render() {
-    return (
-      <h1 onClick={this.kageBunshin.bind(this)}>
-        My name is Naruto Uzumaki {this.state.counter}
-      </h1>
-    );
+    return <h1>My name is Naruto Uzumaki</h1>;
   }
 }
 
