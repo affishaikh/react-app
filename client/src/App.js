@@ -12,7 +12,22 @@ class App extends Component {
   componentDidMount() {
     fetch('/count')
       .then(res => {
-        res.json();
+        return res.json();
+      })
+      .then(json => {
+        this.setState(() => {
+          const counter = json.counter;
+          return { counter };
+        });
+      });
+  }
+
+  kageBunshin() {
+    fetch('/count', {
+      method: 'POST'
+    })
+      .then(res => {
+        return res.json();
       })
       .then(json => {
         this.setState(() => {
@@ -24,7 +39,7 @@ class App extends Component {
 
   render() {
     return (
-      <h1 onClick={this.naruto.bind(this)}>
+      <h1 onClick={this.kageBunshin.bind(this)}>
         My name is Naruto Uzumaki {this.state.counter}
       </h1>
     );
