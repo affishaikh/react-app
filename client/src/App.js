@@ -9,18 +9,18 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch('/count')
-      .then(res => {
-        return res.json();
-      })
-      .then(json => {
-        this.setState(() => {
-          const counter = json.counter;
-          return { counter };
-        });
-      });
-  }
+  // componentDidMount() {
+  //   fetch('/count')
+  //     .then(res => {
+  //       return res.json();
+  //     })
+  //     .then(json => {
+  //       this.setState(() => {
+  //         const counter = json.counter;
+  //         return { counter };
+  //       });
+  //     });
+  // }
 
   kageBunshin() {
     fetch('/count', {
