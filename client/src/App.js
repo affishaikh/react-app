@@ -25,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <h1 onClick={this.naruto.bind(this)}>
-        My name is Uzumaki Naruto {this.state.counter}
+        My name is Naruto Uzumaki {this.state.counter}
       </h1>
     );
   }
